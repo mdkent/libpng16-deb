@@ -1,4 +1,4 @@
-VERSION=1.6.21
+VERSION=1.6.23
 PACKAGE=libpng16
 TEMP=/tmp/libpng16
 
@@ -25,6 +25,7 @@ compile:
 	cd libpng-$(VERSION) && $(MAKE)
 	cd libpng-$(VERSION) && $(MAKE) install DESTDIR=$(TEMP)
 
+# Doesn't really adhere to the debian lib/dev guidelines, but close enough for builds
 package:
 	fpm -s dir \
       -t deb \
@@ -44,6 +45,7 @@ package:
       --deb-shlibs "libpng16 16 libpng16 (= $(VERSION))" \
       --deb-compression xz \
       --deb-no-default-config-files \
+      --exclude "*usr/local/lib/pkgconfig*" \
       usr/local/bin usr/local/lib
 	fpm -s dir \
       -t deb \
