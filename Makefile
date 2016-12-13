@@ -37,8 +37,8 @@ package:
       --license $(DEB_LICENCE) \
       --vendor $(DEB_VENDOR) \
       --maintainer "$(DEB_MAINTAINER)" \
-      --name $(PACKAGE)-16 \
-      --package $(PACKAGE)-16-VERSION_ARCH.deb \
+      --name $(PACKAGE) \
+      --package $(PACKAGE)-VERSION_ARCH.deb \
       --depends "libc6 >= 2.19" \
       --depends "zlib1g >= 1:1.2.8" \
       --replaces "libpng12-0 (< $(VERSION))" \
