@@ -60,7 +60,7 @@ package:
       --name $(PACKAGE)-dev \
       --package $(PACKAGE)-dev-VERSION_ARCH.deb \
       --depends "zlib1g-dev >= 1:1.2.8" \
-      --depends "$(PACKAGE)-16 = $(VERSION)" \
+      --depends "$(PACKAGE) = $(VERSION)" \
       --replaces "libpng12-dev (< $(VERSION))" \
       --deb-compression xz \
       --deb-no-default-config-files \
